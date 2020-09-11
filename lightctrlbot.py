@@ -12,7 +12,7 @@ def start(bot, update):
     bot.send_message(chat_id = update.effective_chat.id, text="Welcome! Type 'Turn on the Light' or /lighton to switch on the light bulb. Type 'Turn off the Light' or /lightoff to switch off the light bulb.")
 
 def unknown(bot, update):
-    bot.send_message(chat_id=update.effective_chat.id, text="Sorry, I didn't understand that command.")
+    bot.send_message(chat_id=update.effective_chat.id, text="Oops, I didn't understand that. Try again!")
 
 
 def value_send(value):
