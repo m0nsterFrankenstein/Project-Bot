@@ -5,7 +5,7 @@ import os
 ADAFRUIT_IO_USERNAME = os.getenv('ADAFRUIT_IO_USERNAME')
 ADAFRUIT_IO_KEY = os.getenv('ADAFRUIT_IO_KEY')
 aio = Client('ADAFRUIT_IO_USERNAME','ADAFRUIT_IO_KEY')
-
+TELEGRAM_TOKEN = os.getenv('TELEGRAM_TOKEN')
 
 def start(bot, update):
     print(str( update.effective_chat.id ))
@@ -40,7 +40,7 @@ def given_message(bot, update):
   elif text == 'Turn off the Light':
     lightoff(bot,update)
 
-u = Updater('1312804804:AAHxkRgiVUbjSCqijnnzhc5kAC3mbUScjJ0')
+u = Updater('TELEGRAM_TOKEN',use_context = True)
 dp = u.dispatcher
 dp.add_handler(CommandHandler('lighton',lighton))
 dp.add_handler(CommandHandler('lightoff',lightoff))
